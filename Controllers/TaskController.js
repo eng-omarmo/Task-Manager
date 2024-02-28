@@ -11,6 +11,7 @@ const getTasks = (req, res) => {
 //route  post: api/tasks
 //access private
 const createTask = (req, res) => {
+
     res.status(200).json({ message: "create Task" })
 }
 
@@ -18,7 +19,7 @@ const createTask = (req, res) => {
 //route  Put: api/tasks/:id
 //access private
 const updateTask = (req, res) => {
-    res.status(200).json({ message: "create Task" })
+    res.status(200).json({ message: "Update Task" })
 }
 
 
@@ -26,7 +27,7 @@ const updateTask = (req, res) => {
 //route  delete: api/tasks/:id
 //access private
 const deleteTask = (req, res) => {
-    res.status(200).json({ message: "create Task" })
+    res.status(200).json({ message: "delete Task" })
 }
 
 

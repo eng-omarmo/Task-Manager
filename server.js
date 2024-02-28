@@ -9,3 +9,5 @@ app.listen(Port, () => {
 })
 
 app.use('/api/tasks', require('./Route/tasksRoute'))
+
+app.use('/api/user', require('./Route/UserRoute'))
