@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
 const { errorHandler } = require('./middleware/ErrorHandler');
-// const verifyToken = require('./middleware/verifyToken');
+
 const app = express();
 
 const connectDb = require('./db/db');
@@ -18,8 +18,6 @@ app.listen(Port, () => {
 // Error handler middleware
 app.use(errorHandler);
 
-// // Verify token middleware
-// app.use(verifyToken);
 
 app.use(express.urlencoded({ extended: true }));
 

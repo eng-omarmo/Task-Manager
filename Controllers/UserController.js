@@ -24,12 +24,13 @@ const createUser = async (req, res) => {
         const checkUser = await User.findOne({ email });
 
         if(!checkUser){
-            hashPassword = await bcrypt.hash(password, 10);
+            const hashPassword = await bcrypt.hash(req.body.password, 10);
             const newUser = await User.create({
                 username: req.body.username,
                 email: req.body.email,
-                password: req.body.password
-            })
+                password: hashPassword
+            });
+            
           
             res.status(200).json({message:`successfully created `})
         }
