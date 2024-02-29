@@ -22,7 +22,7 @@ app.use(errorHandler);
 app.use(express.urlencoded({ extended: true }));
 
 // Routes requiring authentication
-app.use('/api/tasks', require('./Route/tasksRoute'));
+app.use('/api/task', require('./Route/tasksRoute'));
 app.use('/api/user', require('./Route/UserRoute'));
 
 // Login route (does not require authentication)
