@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const color = require('color');
+const colors = require('colors');
 
-const connectdb = async (uri) => {
+const connectDb = async (uri) => {
     try {
         const connect=await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log('> Connected...'.bgCyan,connect.connection.host,connect.connection.name);
@@ -11,4 +11,4 @@ const connectdb = async (uri) => {
     }
 }
 
-module.exports = connectdb;
+module.exports = connectDb;

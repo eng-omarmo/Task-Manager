@@ -1,16 +1,19 @@
 const express = require('express')
 const dotenv = require('dotenv').config()
+const {errroHandler, errorHandler}= require('./middleware/ErrorHandler')
 const app = express()
-const connectdb  = require('./db/db')
-const Port = 5000 || process.env.Port
+const connectDb = require('./db/db')
+
+let Port=process.env.Port || 5000;
+
+connectDb(process.env.Uri);
+app.use(express.json())
+
 
 app.listen(Port, () => {
     console.log(`app is running on Port ${Port}`)
 })
-
-connectdb(process.env.Uri);
-app.use(express.json())
-
+app.use(errorHandler)
 app.use(express.urlencoded({ extended: true }));
 
 
